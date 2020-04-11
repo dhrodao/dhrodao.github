@@ -39,7 +39,7 @@ layout: default
     </ul>
   </p>
   <p>
-    I hope you enjoy this website, it's al made by me <i class="em em-relaxed" aria-role="presentation" aria-label="RELAXED"></i>.
+    I hope you enjoy my website, it's al made by me <i class="em em-relaxed" aria-role="presentation" aria-label="RELAXED"></i>.
   </p>
 </div>
 <div id="project" class="project-container">
@@ -47,11 +47,12 @@ layout: default
   <ul class="project-ul">
     {% for post in site.posts limit:4 %}
       <li>
-        <h2><a href="{{ post.url }}" class="project-link">{{ post.title }}</a></h2>
+        <h2 class="zoom"><a href="{{ post.url }}" class="project-link">{{ post.title }}</a></h2>
         {{ post.description }}
       </li>
     {% endfor %}
-</ul>
+  </ul>
+  <h4 class="blog-link-text"><a href="/blog.html" class="blog-link">View all posts</a></h4>
 </div>
 <div id="contact" class="container">
   <h2>Contact</h2>

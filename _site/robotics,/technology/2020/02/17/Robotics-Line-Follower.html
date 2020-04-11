@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link href="https://emoji-css.afeld.me/emoji.css" rel="stylesheet">
+    <title>Daniel Hervás Rodao</title>
+  </head>
+  <body>
+    <div class="navbar">
+    <a href="/index.html">Home</a>
+    <a href="/index.html/#about">About me</a>
+    <a href="/index.html/#project">My projects</a>
+    <a href="/index.html/#contact">Contact me</a>
+</div>
+
+    <div class="post-div">
+  <h2 class="post-h2">Robotics: Line Follower</h2>
+  <p class="post-p">17 Feb 2020 - dhrodao</p>
+
+  <h1 id="1-introduction">1. Introduction</h1>
+
+<p>For this project I have used CV2 in Phyton for image processing and different logic methods for robots, the robot used has a camera in the front left side of the vehicle (it’s a F1 car). First, I have used the most basic of all, case-based programming. The next method of implementation will be through a PID controller. I will be updating this post with the new changes in my proyect.</p>
+
+<figure class="align-center">
+  <img src="http://localhost:4000/assets/images/blog/escenario.png" alt="Figure 1. Scenario." />
+</figure>
+
+<h2 id="11-what-case-based-programming-is">1.1. What case-based programming is</h2>
+
+<p>Case-based control is a relatively simple reactive system. It is an Artificial Intelligence methodology to carry out learning that has achieved good results in many fields of application. As features, a case-based control:</p>
+<p>
+    · Iterative operation (fast iterations)
+</p>
+<p>
+    · Situation correspondence table
+</p>
+<p>
+    · Allows to react to unforeseen events
+</p>
+<p>
+    · Time does not influence. it's "here and now"
+ </p>
+
+<h2 id="12-what-pid-controller-is">1.2. What PID controller is</h2>
+
+<p>It is a combination of three controllers, proportional (P), derivative (D) and Integrator (I). The P controller reacts notably to high errors, the D controller smooths the error in order the car doesn’t start swinging and finally the I controller removes the offsets ocasionated by the other controllers.</p>
+<figure class="align-center">
+  <img src="http://localhost:4000/assets/images/blog/PID.png" alt="RGB image" />
+  <figcaption>PID ecuation.</figcaption>
+</figure>
+
+<h1 id="2-image-processing">2. Image processing</h1>
+
+<p>Before implementing the robot intelligence, we must do a <strong>simple image processing</strong> in order to extract the information from the sensors we have been provided. Firstly, we need to get the <strong>RGB</strong> image from the camera, and convert it to <strong>HSV</strong>. Then, what I have done is, using the cv2 library, create a mask with the line colour and aplying it to the HSV image. Now we have a <strong>binary image</strong>, so we can start extracting information from it.</p>
+
+<figure class="align-center">
+  <img src="http://localhost:4000/assets/images/blog/rgb.png" alt="RGB image" />
+  <figcaption>RGB image.</figcaption>
+
+  <img src="http://localhost:4000/assets/images/blog/hsv.png" alt="HSV image" />
+  <figcaption>HSV image.</figcaption>
+
+  <img src="http://localhost:4000/assets/images/blog/binary.png" alt="Binary image" />
+  <figcaption>Binary image.</figcaption>
+</figure>
+
+<h1 id="3-case-based-implementation">3. Case-based implementation</h1>
+
+<p>This is the easiest way to perform your logic method. I used an <strong>if-esif</strong> structure contemplating the possible situations in which the car can be involved, I have set the conditions up experimentally.</p>
+
+<h2 id="31-way-to-set-the-conditions-up">3.1. Way to set the conditions up</h2>
+
+<p>I have in account the pixels from my image, count the rigth and left side pixels from the half of the <strong>binary image</strong> and then apply the most suitable condition for the extracted information from the image.</p>
+
+<pre>
+  <div class="video-responsive">
+    operation with case-based control method
+    <iframe src="https://www.youtube.com/embed/DZe6JDucfn0" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+  </div>
+</pre>
+
+<h1 id="4-pid-controller-implementation">4. PID controller implementation</h1>
+
+<p>First, I needed to change the way I calculate my error (to count pixels in each side of the screen wasn’t that efficient). So I thought a new way to calculate the deviation, now I calculate the center of the fotogram and then the center of the red line on the tack, with that I get the car deviation (center - redline_center).
+Also, I have programmed a system so the car brakes when it detects a curve and once it’s done it increments it’s velocity again, by counting the white pixels from some lines of the frame, on the rigth and left, with that i was able to anticipate to the curve and slow down before get the car crashed.
+I implemented the PID algorithm and configured each proportionality constant experimentally. The implementation of each one:</p>
+
+<p>
+  <strong>· P controller:</strong> just multiplying the deviation error by Kp. It makes the car to steer proportionally to the error.
+</p>
+<p>
+    <strong>· I controller:</strong> save every error in a global n-array where n is the last n-errors, later get it's mean and multiply it by               Ki. This helps to remove the offset generated by P and D.
+</p>
+<p>
+    <strong>· D controller:</strong> it uses the previous error on every iteration, so a global variable is needded in order to save the error for the next iteration. If the error is high it will make the car to turn more and conversely if the error is low and the car is steering to much it will smooth it.
+</p>
+
+<p>After many experimental attempts, this is the result:</p>
+
+<pre>
+  <div class="video-responsive">
+    operation with PID
+    <iframe src="https://www.youtube.com/embed/sEzLuU40e9Y" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+  </div>
+</pre>
+
+<p>After all the above, I was looking for a better system for the velocity management, so I decided on implementing a velocity controller using the <em>Integrative</em> and the <em>Proportional</em> parts. I stablished an initial speed, and if the error starts increasing, the car slows down, then it will be recovering its initial speed.</p>
+
+</div>
+
+    <div class="footer">
+  <p><strong>&copy;</strong> 2020 Daniel Hervás Rodao · dhrodao</p>
+</div>
+
+  </body>
+</html>
