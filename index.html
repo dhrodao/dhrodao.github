@@ -1,0 +1,59 @@
+---
+title: Home
+layout: default
+---
+<div id="home" class="hero-container">
+  <div class="hero-title">
+    Hey I'm Daniel
+  </div>
+  <hr class="hero-hr"></hr>
+  <div class="hero-subtitle">
+    <a class="hero-list" href="#Instagram">Instagram</a>
+    | <a class="hero-list" href="#Instagram">Twitter</a>
+    | <a class="hero-list" href="#Instagram">Github</a>
+    | <a class="hero-list" href="#Instagram">LinkedIn</a>
+  </div>
+</div>
+<div class="hero-divider"></div>
+<div id="about" class="container">
+  <h2>About me</h2>
+  <p>I'm a Telematics Engineering student at Rey Juan Carlos University. From <i class="em em-flag-ea" aria-role="presentation" aria-label="Ceuta & Melilla Flag"></i>
+    . I consider myself a full time learner, I love investing time learning
+    new things about technology.
+  </p>
+  <p>
+    Skills:
+    <ul class="experience-list">
+      <li>Ada programming</li>
+      <li>Java programming</li>
+      <li>Phyton programming</li>
+      <li>Networking</li>
+      <li>Robots intelligence algorithms (not ROS)</li>
+    </ul>
+    <br>
+    Interests:
+    <ul class="experience-list">
+      <li>Databases</li>
+      <li>HTML, CSS, JavaScript</li>
+      <li>Increase my knowledge</li>
+    </ul>
+  </p>
+  <p>
+    I hope you enjoy my website, it's al made by me <i class="em em-relaxed" aria-role="presentation" aria-label="RELAXED"></i>.
+  </p>
+</div>
+<div id="project" class="project-container">
+  <h2>My projects</h2>
+  <ul class="project-ul">
+    {% for post in site.posts limit:4 %}
+      <li>
+        <h2><a href="{{ post.url }}" class="project-link">{{ post.title }}</a></h2>
+        {{ post.description }}
+      </li>
+    {% endfor %}
+</ul>
+</div>
+<div id="contact" class="container">
+  <h2>Contact</h2>
+  <p>My email is: <strong>danielhervasrodao(at)gmail.com</strong></p>
+</div>
