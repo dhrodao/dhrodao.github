@@ -3,22 +3,26 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="shortcut icon" type="image/ico" href="/assets/images/favicon.ico">
     <link href="https://emoji-css.afeld.me/emoji.css" rel="stylesheet">
     <title>Daniel Hervás Rodao</title>
   </head>
   <body>
     <div class="navbar">
+    <div class="navbar-logo">
+      <a href=""><figure><img src="/assets/images/favicon.ico" alt=""></figure></a>
+    </div>
     <a href="/index.html">Home</a>
     <a href="/index.html/#about">About me</a>
     <a href="/index.html/#project">My projects</a>
     <a href="/index.html/#contact">Contact me</a>
 </div>
 
-    <div class="post-div">
+    <div id="#home" class="post-div">
   <h2 class="post-h2">Robotics: Line Follower</h2>
   <p class="post-p">17 Feb 2020 - dhrodao</p>
-
-  <h1 id="1-introduction">1. Introduction</h1>
+  <div class="post-content-div">
+    <h1 id="1-introduction">1. Introduction</h1>
 
 <p>For this project I have used CV2 in Phyton for image processing and different logic methods for robots, the robot used has a camera in the front left side of the vehicle (it’s a F1 car). First, I have used the most basic of all, case-based programming. The next method of implementation will be through a PID controller. I will be updating this post with the new changes in my proyect.</p>
 
@@ -106,6 +110,8 @@ I implemented the PID algorithm and configured each proportionality constant exp
 </pre>
 
 <p>After all the above, I was looking for a better system for the velocity management, so I decided on implementing a velocity controller using the <em>Integrative</em> and the <em>Proportional</em> parts. I stablished an initial speed, and if the error starts increasing, the car slows down, then it will be recovering its initial speed.</p>
+
+  </div>
 
 </div>
 

@@ -2,6 +2,10 @@
   font-family: pacifico;
   src: url(pacifico.ttf);
 }
+@font-face {
+    font-family: monikerlight;
+    src: url(light.woff);
+}
 
 body{
   background-color: #454444;
@@ -28,6 +32,8 @@ body{
   color: #f2f2f2;
   text-align: center;
   padding: 14px 16px;
+  padding-left: 5px;
+  margin-left: inherit;
   text-decoration: none;
 }
 
@@ -35,6 +41,30 @@ body{
   color: blue;
   transition-duration: 0.3s;
 }
+
+.navbar-logo figure{
+  margin-top: 1px;
+  padding-left: 1%;
+  padding-bottom: 0px;
+  margin-left: 5px;
+  margin-right: 0px;
+  max-width: 50px;
+  max-height: 50px;
+  float:left;
+  margin: inherit;
+}
+/*Zoom in para logo*/
+.navbar-logo figure img {
+	-webkit-transform: scale(1);
+	transform: scale(1);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+.navbar-logo figure:hover img {
+	-webkit-transform: scale(1.3);
+	transform: scale(1.3);
+}
+/*******************/
 
 .navbar-ul{
   background-color: black;
@@ -122,6 +152,12 @@ p{
   text-decoration: none;
   color: white;
 }
+
+.hero-list:hover{
+  text-shadow: -1px 0 white, 1px 0 white, 0 1px white, 0 -1px white;
+  transition: 0.5s;
+}
+
 .hero-divider{
   padding: 10px;
   background-color: black;
@@ -170,8 +206,9 @@ p{
 }
 
 .post-h2{
-  padding-top: 3.8%;
+  padding-top: 9.5%;
   text-align: center;
+  font-family: pacifico;
 }
 
 .post-p{
@@ -189,8 +226,8 @@ img{
 }
 
 .post-div{
-  padding-left: 15%;
-  padding-right: 15%;
+  padding-left: 17%;
+  padding-right: 17%;
 }
 
 
@@ -208,6 +245,7 @@ iframe{
   margin-left: 15%;
   margin-right: 15%;
   text-align: center;
+  font-family: monikerlight;
 }
 
 .post-row{
@@ -288,4 +326,17 @@ iframe{
   text-shadow: -1px 0 blue, 1px 0 blue, 0 1px blue, 0 -1px blue;
   color: #fff;
   transition: 0.5s;
+}
+
+.post-content-div{
+  font-family: monikerlight;
+  text-align: justify;
+}
+
+.post-content-div h2{
+  text-decoration: underline;
+}
+
+.post-content-div h1{
+  text-decoration: underline;
 }

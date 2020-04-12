@@ -1,9 +1,11 @@
 ---
 layout: default
 ---
-<div class="post-div">
+<div id="#home" class="post-div">
   <h2 class="post-h2">{{ page.title }}</h2>
   <p class="post-p">{{ page.date | date_to_string }} - {{ page.author }}</p>
+  <div class="post-content-div">
+    {{ content }}
+  </div>
 
-  {{ content }}
 </div>
