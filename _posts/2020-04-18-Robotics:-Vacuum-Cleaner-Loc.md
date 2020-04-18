@@ -10,4 +10,5 @@ author: dhrodao
 ---
 
 # 1. Introduction
-Will be updated soon.
+The objective of this exercise is to program the intelligence of a vacuum cleaner in order it autolocates in a house (with the given map). The map is a binary image, and you need to process it to abstract information. The objective is to cover the largest area of the house using the auto location algorithm.
+
