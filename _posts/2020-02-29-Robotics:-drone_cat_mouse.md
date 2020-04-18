@@ -67,3 +67,11 @@ For the last implementantion, as my drone was a bit <em> reckless </em> I decide
     <iframe src="https://www.youtube.com/embed/bSf1zbZkVB4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
   </div>
 </pre>
+
+# 4. Local version execution
+I had to make some changes to many parameters in order tu adjust my drone response, change some methods in order to work correctly with the API and fix some issues with the cv2 library. This is the proof it works fine:
+<pre>
+  <div class="video-responsive">
+    <iframe src="https://www.youtube.com/embed/ReehHTJssCY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</pre>
