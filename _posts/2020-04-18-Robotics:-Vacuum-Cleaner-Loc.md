@@ -43,3 +43,9 @@ We will need tho check every close cell and check its value.
 With a specific method we will calculate the next cell the vacuum needs to move.
 
 # 5. Return route
+If our vacuum reaches to a critical point and it's surrounded of obstacles it wont be able to calculate the route to move to another cell. We will need to implement a method to check if each cell the vacuum is in order if it's a critical point or not.
+The return will be calculated with the saved path that the vacuum has travelled.
+
+# 6. Vacuum driving
+Once calculated the next move, we need to calculate the deviation that exists from our cell to the target. We need to convert our coordinates from absolute to the relatives to the robot.
+The velocity and the steering will be determined depending of the situation.
