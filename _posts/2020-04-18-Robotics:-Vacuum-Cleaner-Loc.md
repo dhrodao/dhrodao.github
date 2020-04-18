@@ -49,3 +49,5 @@ The return will be calculated with the saved path that the vacuum has travelled.
 # 6. Vacuum driving
 Once calculated the next move, we need to calculate the deviation that exists from our cell to the target. We need to convert our coordinates from absolute to the relatives to the robot.
 The velocity and the steering will be determined depending of the situation.
+
+# 7. Visual example
