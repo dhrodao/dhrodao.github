@@ -113,3 +113,11 @@ As you can see on the previous version, the vectors weren't correctly displayed 
     <iframe src="https://www.youtube.com/embed/506_BLl2cLE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
   </div>
 </pre>
+
+This is my last version:
+
+<pre>
+  <div class="video-responsive">
+   <iframe src="https://www.youtube.com/embed/veVt6JvF1MU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</pre>
