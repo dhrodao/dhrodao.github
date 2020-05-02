@@ -60,4 +60,4 @@ As my second version, I focused on fixing the issue I got with the px size of th
   self.VACUUM_PX_HALF = 8
   self.VACUUM_SIZE = 0.32 #16/50=0.32m (vacuum size on meters)
 </pre>
-This is the visual example:
+Also, on the previous version, as the size I defined was a bit bigger, the hole surface wasn't covered, there were some thiny spaces between each sweep. So, considering 16px as size this was also fixed besause the distance from each sweep must be close to 0 (many times it is less than 0) and it covers almost the entire surface. This is the visual example:
