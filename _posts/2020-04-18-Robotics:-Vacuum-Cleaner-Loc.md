@@ -57,7 +57,7 @@ As first version I used a 20px size for the vacuum because using the real size I
 As my second version, I focused on fixing the issue I got with the px size of the vacuum. So I fixed it (the issue came from the method that checked the state of the cells) and updated every variable related with the vacuum size:
 <pre>
   self.VACUUM_PX_SIZE = 16
-        self.VACUUM_PX_HALF = 8
-        self.VACUUM_SIZE = 0.32 #16/50=0.32m (vacuum size on meters)
+  self.VACUUM_PX_HALF = 8
+  self.VACUUM_SIZE = 0.32 #16/50=0.32m (vacuum size on meters)
 </pre>
 This is the visual example:
