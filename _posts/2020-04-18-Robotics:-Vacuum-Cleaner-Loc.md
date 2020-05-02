@@ -51,3 +51,13 @@ Once calculated the next move, we need to calculate the deviation that exists fr
 The velocity and the steering will be determined depending of the situation.
 
 # 7. Visual example
+As first version I used a 20px size for the vacuum because using the real size I was getting an error and the vacuum deviated too much and it was loosing the path it must follow. So I tested and using a bigger size and it found correctly. Here is the visual example:
+
+
+As my second version, I focused on fixing the issue I got with the px size of the vacuum. So I fixed it (the issue came from the method that checked the state of the cells) and updated every variable related with the vacuum size:
+<pre>
+  self.VACUUM_PX_SIZE = 16
+        self.VACUUM_PX_HALF = 8
+        self.VACUUM_SIZE = 0.32 #16/50=0.32m (vacuum size on meters)
+</pre>
+This is the visual example:
