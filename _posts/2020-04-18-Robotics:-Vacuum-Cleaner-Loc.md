@@ -60,7 +60,9 @@ As my second version, I focused on fixing the issue I got with the px size of th
   self.VACUUM_PX_HALF = 8
 </pre>
 Also, on the previous version, as the size I defined was a bit bigger, the hole surface wasn't covered, there were some thiny spaces between each sweep. So, considering 16px as size this was also fixed besause the distance from each sweep must be close to 0 (many times it is less than 0) and it covers almost the entire surface:
-
+<figure class="align-center">
+  <img src="{{ '/assets/images/blog/sweeping.png' | absolute_url }}" alt="Figure 3. First Version | Scond Version.">
+</figure>
 On this version I also added more speed for the vacuum, calculated from the 90º laser distance (if distance is more than 3 cells full speed, if distance is less than 3 cells but higher than 1 medium speed and if its closer the speed is the minumum in order the vacuum cleaner don't get smacked into the wall. This is the visual example:
 
 
