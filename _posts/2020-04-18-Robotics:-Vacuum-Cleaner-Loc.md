@@ -54,13 +54,12 @@ The velocity and the steering will be determined depending of the situation.
 As first version I used a 20px size for the vacuum because using the real size I was getting an error and the vacuum deviated too much and it was loosing the path it must follow. So I tested and using a bigger size and it found correctly. Here is the visual example:
 
 
-As my second version, I focused on fixing the issue I got with the px size of the vacuum. So I fixed it (the issue came from the map information abstraction) and updated every variable related with the vacuum size:
+As my second version, I focused on fixing the issue I got with the px size of the vacuum. So I fixed it adding a dilation process to my initial map (the issue came from the map information abstraction) and updated every variable related with the vacuum size:
 <pre>
   self.VACUUM_PX_SIZE = 16
   self.VACUUM_PX_HALF = 8
 </pre>
 Also, on the previous version, as the size I defined was a bit bigger, the hole surface wasn't covered, there were some thiny spaces between each sweep. So, considering 16px as size this was also fixed besause the distance from each sweep must be close to 0 (many times it is less than 0) and it covers almost the entire surface:
-
 
 On this version I also added more speed for the vacuum, calculated from the 90º laser distance (if distance is more than 3 cells full speed, if distance is less than 3 cells but higher than 1 medium speed and if its closer the speed is the minumum in order the vacuum cleaner don't get smacked into the wall. This is the visual example:
 
