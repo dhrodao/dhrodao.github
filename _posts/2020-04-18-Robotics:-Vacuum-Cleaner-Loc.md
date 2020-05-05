@@ -69,6 +69,6 @@ Also, on the previous version, as the size I defined was a bit bigger, the hole 
 On this version I also added more speed for the vacuum, calculated from the 90º laser distance (if distance is more than 3 cells full speed, if distance is less than 3 cells but higher than 1 medium speed and if its closer the speed is the minumum in order the vacuum cleaner don't get smacked into the wall or lose the objective. This is the visual example (it performs highly better than the first version):
 <pre>
   <div class="video-responsive">
-    <iframe src="https://www.youtube.com/embed/g-R8jsmUkdY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <iframe src="https://www.youtube.com/embed/-3ISPzqsoO8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
   </div>
 </pre>
