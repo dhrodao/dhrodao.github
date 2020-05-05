@@ -52,8 +52,11 @@ The velocity and the steering will be determined depending of the situation.
 
 # 7. Visual example
 As first version I used a 20px size for the vacuum because using the real size I was getting an error and the vacuum deviated too much and it was loosing the path it must follow. So I tested and using a bigger size and it found correctly. Here is the visual example:
-
-
+<pre>
+  <div class="video-responsive">
+    <iframe src="https://www.youtube.com/embed/8gf1R6S3UzM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</pre>
 As my second version, I focused on fixing the issue I got with the px size of the vacuum. So I fixed it adding a dilation process to my initial map (the issue came from the map information abstraction) and updated every variable related with the vacuum size:
 <pre>
   self.VACUUM_PX_SIZE = 16
@@ -63,6 +66,9 @@ Also, on the previous version, as the size I defined was a bit bigger, the hole 
 <figure class="align-center">
   <img src="{{ '/assets/images/blog/sweeping.png' | absolute_url }}" alt="Figure 3. First Version | Scond Version.">
 </figure>
-On this version I also added more speed for the vacuum, calculated from the 90º laser distance (if distance is more than 3 cells full speed, if distance is less than 3 cells but higher than 1 medium speed and if its closer the speed is the minumum in order the vacuum cleaner don't get smacked into the wall. This is the visual example:
-
-
+On this version I also added more speed for the vacuum, calculated from the 90º laser distance (if distance is more than 3 cells full speed, if distance is less than 3 cells but higher than 1 medium speed and if its closer the speed is the minumum in order the vacuum cleaner don't get smacked into the wall or lose the objective. This is the visual example (it performs highly better than the first version):
+<pre>
+  <div class="video-responsive">
+    <iframe src="https://www.youtube.com/embed/g-R8jsmUkdY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</pre>
