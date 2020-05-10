@@ -64,11 +64,18 @@ As my second version, I focused on fixing the issue I got with the px size of th
 </pre>
 Also, on the previous version, as the size I defined was a bit bigger, the hole surface wasn't covered, there were some thiny spaces between each sweep. So, considering 16px as size this was also fixed besause the distance from each sweep must be close to 0 (many times it is less than 0) and it covers almost the entire surface:
 <figure class="align-center">
-  <img src="{{ '/assets/images/blog/sweeping.png' | absolute_url }}" alt="Figure 3. First Version | Scond Version.">
+  <img src="{{ '/assets/images/blog/sweeping.png' | absolute_url }}" alt="Figure 3. First Version vs Second Version.">
 </figure>
 On this version I also added more speed for the vacuum, calculated from the 90º laser distance (if distance is more than 3 cells full speed, if distance is less than 3 cells but higher than 1 medium speed and if its closer the speed is the minumum in order the vacuum cleaner don't get smacked into the wall or lose the objective. This is the visual example (it performs highly better than the first version):
 <pre>
   <div class="video-responsive">
     <iframe src="https://www.youtube.com/embed/-3ISPzqsoO8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</pre>
+
+As the last version of this exercise I added an PI controller for the vacuum rotation, now it performs quite better on the high deviation turns. Also I've changed the return method (now it's a bit slower, because the vacuum cleaner follows the path that it has built while navigating but on an inverse way) the reason of I've done this is because with my other version when the vacuum cleaner sweeped a big path it failed while calculating the return path (this version consisted of a return method that operates recursively building a return path. This implementation wasn't the best because for large paths it was failing, so I decided to keep the other algorithm having in account that it's quite slower). This is the visual example:
+<pre>
+  <div class="video-responsive">
+    <iframe src="https://www.youtube.com/embed/FE5cvxLvaMw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
   </div>
 </pre>
