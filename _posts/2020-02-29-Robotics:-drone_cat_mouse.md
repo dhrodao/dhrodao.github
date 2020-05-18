@@ -75,3 +75,10 @@ I had to make some changes to many parameters in order tu adjust my drone respon
     <iframe src="https://www.youtube.com/embed/ReehHTJssCY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
   </div>
 </pre>
+
+Last version using autonomous mouse:
+<pre>
+  <div class="video-responsive">
+    <iframe src="https://www.youtube.com/embed/ag_OK0Iaw6o" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</pre>
